@@ -1,0 +1,6 @@
+C:\Users\pk\source\repos\ComputationalOperations\ComputationalOperations\bin\Debug\ComputationalOperations.dll
+C:\Users\pk\source\repos\ComputationalOperations\ComputationalOperations\bin\Debug\ComputationalOperations.pdb
+C:\Users\pk\source\repos\ComputationalOperations\ComputationalOperations\obj\Debug\ComputationalOperations.csproj.AssemblyReference.cache
+C:\Users\pk\source\repos\ComputationalOperations\ComputationalOperations\obj\Debug\ComputationalOperations.csproj.CoreCompileInputs.cache
+C:\Users\pk\source\repos\ComputationalOperations\ComputationalOperations\obj\Debug\ComputationalOperations.dll
+C:\Users\pk\source\repos\ComputationalOperations\ComputationalOperations\obj\Debug\ComputationalOperations.pdb
