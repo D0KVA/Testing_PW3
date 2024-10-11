@@ -1,53 +1,51 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 namespace ComputationalOperations.Tests
 {
     [TestClass]
-    public class ComputtationalOpTests
+    public class ComputationalOpTests
     {
-        ComputationalOp op = new ComputationalOp();
+        private static ComputationalOp op;
+        private static List<double> expectedRootsMoreThanZero;
+        private static List<double> expectedRootsZero;
+        private static List<double> expectedRootsLessThanZero;
+
+        [ClassInitialize]
+        public static void ClassInit(TestContext context)
+        {
+            op = new ComputationalOp();
+            expectedRootsMoreThanZero = new List<double> { 1, 4 };
+            expectedRootsZero = new List<double> { -1/3};
+            expectedRootsLessThanZero = new List<double> { 1, 52, 14 };
+        }
+
         [TestMethod]
         public void Root_Discr_is_more_than_0_ReturnTrue()
         {
-            ComputationalOp op = new ComputationalOp();
-            List<double> list = new List<double>();
-            list.Add(1);
-            list.Add(4);
-            CollectionAssert.Equals(op.Root_Combing(1, -5, 4), list);
+            CollectionAssert.Equals(expectedRootsMoreThanZero, op.Root_Combing(1, -5, 4));
         }
 
         [TestMethod]
         public void Root_Discr_is_0_ReturnTrue()
         {
-            ComputationalOp op = new ComputationalOp();
-            List<double> list = new List<double>();
-            list.Add(-1 / 3);
-            CollectionAssert.AreEquivalent(op.Root_Combing(9, -6, 1), list);
+            CollectionAssert.AreEquivalent(expectedRootsZero, op.Root_Combing(9, -6, 1));
         }
 
         [TestMethod]
         public void Root_Discr_is_less_than_0_ReturnTrue()
         {
-            ComputationalOp op = new ComputationalOp();
-            List<double> list = new List<double>();
-            list.Add(1);
-            list.Add(52);
-            list.Add(14);
-            CollectionAssert.AreNotEqual(op.Root_Combing(1, 1, 4), list);
+            CollectionAssert.AreNotEqual(expectedRootsLessThanZero, op.Root_Combing(1, 1, 4));
         }
 
         [TestMethod]
         public void Calculate_200poin2_15point1_ReturnTrue()
         {
-            ComputationalOp op = new ComputationalOp();
-
-            double number = 200.2; 
-            double percentage = 15.1; 
-            double expected = 30.0; 
-            double delta = 0.3; 
+            double number = 200.2;
+            double percentage = 15.1;
+            double expected = 30.0;
+            double delta = 0.3;
 
             double result = op.CalculatePercentage(number, percentage);
 
